@@ -1,38 +1,220 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 100px;
+  z-index: 10000;
+  transition: 0.6s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header .logo {
+  position: relative;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.6s;  
 }
 
-.App-header {
-  background-color: #282c34;
+header .logo img {
+  width: 125px; 
+  height: 125px;
+}
+
+header #toggle {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+header #toggle:before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  width: 100%;
+  height: 2px;
+  background: #1b9945;
+}
+
+header #toggle:after {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  width: 100%;
+  height: 2px;
+  background: #1b9945;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
   min-height: 100vh;
+  padding: 100px;
+  background: url(ichuteam3.jpg);
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.banner.active header #toggle:before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.banner.active header #toggle:after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.banner.active {
+  transform: translateX(-400px);
+}
+
+#navigation {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background: #1b9945;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  transition: 0.5s;
+}
+
+#navigation.active {
+  right: 0;
+}
+
+#navigation ul {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#navigation ul li {
+  list-style-type: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#navigation ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 4px;
+}
+
+.content {
+  max-width: 600px;
+}
+
+.content h2 {
+  color: #fff;
+  font-size: 2.5em;
+}
+
+.content h2 span {
+  color: #1b9945;
+  font-size: 1.2em;
+}
+
+.content p {
+  font-size: 1.2em;
+  color: #fff;
+  font-weight: 300;
+}
+
+.content a {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  background: #1b9945;
+  color: #000;
+  padding: 10px 30px;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.sci {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 100px;
+}
+
+.sci li {
+  list-style: none;
+}
+
+.sci li a {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 75px;
+  height: 75px;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.sci li a:hover {
+  background: white;
+  
+}
+
+@media (max-width: 850px) {
+  header {
+    padding: 30px 50px;
   }
-  to {
-    transform: rotate(360deg);
+  .banner {
+    padding: 100px 50px 150px;
+  }
+  .banner.content h2 {
+    font-size: 1.8em;
+  }
+  .banner p, .banner.content a {
+    font-size: 1em;
+  }
+  .banner.active {
+    transform: translateX(-250px);
+  }
+  #navigation {
+    width: 250px;
+  }
+  .sci {
+    position: absolute;
+    bottom: 50px;
+    right: initial;
+    flex-direction: row;
+  }
+  .sci li a {
+    margin: initial;
+    margin-right: 10px;
+  }
+
+  header .logo img {
+    width: 75px; 
+    height: 75px;
   }
 }

@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Sora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Fira+Sans&family=Sora&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Sora', 'Asap', 'Fira Sans', sans-serif;
 }
 
 header {
@@ -155,6 +159,12 @@ header #toggle:after {
   text-decoration: none;
   font-size: 1.2em;
   font-weight: 500;
+  border:#1b9945 solid;
+  transition: 0.5s;
+}
+.content a:hover {
+  border:white solid;
+  background: white;
 }
 
 .sci {

@@ -1,9 +1,6 @@
 import React from "react";
-import {
-  AiOutlineFacebook,  
-  AiOutlineGithub,
-} from "react-icons/ai";
-import { FaDiscord } from 'react-icons/fa'
+import { AiOutlineFacebook, AiOutlineGithub } from "react-icons/ai";
+import { FaDiscord } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import "./App.css";
 
@@ -19,13 +16,16 @@ function App() {
       <div className="banner" id="sec">
         <header>
           <a href="/" className="logo">
-            <img src="https://cdn.discordapp.com/attachments/689497832029421690/781295380448542741/imageonline-co-blackandwhiteimage.png" alt="LOGO" />
+            <img
+              src="https://cdn.discordapp.com/attachments/689497832029421690/781295380448542741/imageonline-co-blackandwhiteimage.png"
+              alt="LOGO"
+            />
           </a>
           <div id="toggle" onClick={toggle}></div>
         </header>
         <div className="content">
           <h2>
-            Bienvenido a  <span>Ichu team</span>
+            Bienvenido a <span>Ichu team</span>
           </h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi nemo
@@ -33,7 +33,7 @@ function App() {
             tempore reiciendis doloribus consequatur neque voluptate doloremque
             adipisci, asperiores repudiandae. Quod!
           </p>
-          <a href="/">Saber mas</a>
+          <a href="/" className="btn-info">Saber mas</a>
         </div>
         <ul className="sci">
           <IconContext.Provider value={{ color: "#1b9945", size: "4em" }}>

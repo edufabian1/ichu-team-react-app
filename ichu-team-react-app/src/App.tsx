@@ -1,8 +1,8 @@
 import React from "react";
-import { AiOutlineFacebook, AiOutlineGithub } from "react-icons/ai";
-import { FaDiscord } from "react-icons/fa";
-import { IconContext } from "react-icons/lib";
+import { GiHamburgerMenu } from 'react-icons/gi'
+
 import "./App.css";
+import SocialMedia from "./components/SocialMedia/SocialMedia";
 
 function toggle() {
   var sec = document.getElementById("sec");
@@ -21,7 +21,7 @@ function App() {
               alt="LOGO"
             />
           </a>
-          <div id="toggle" onClick={toggle}></div>
+          <div id="toggle" onClick={toggle}><GiHamburgerMenu size="3em" color="#1b9945"/></div>
         </header>
         <div className="content">
           <h2>
@@ -35,25 +35,7 @@ function App() {
           </p>
           <a href="/" className="btn-info">Saber mas</a>
         </div>
-        <ul className="sci">
-          <IconContext.Provider value={{ color: "#1b9945", size: "4em" }}>
-            <li>
-              <a href="https://www.facebook.com/groups/289385809031879/">
-                <AiOutlineFacebook />
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/edufabian1/ichu-team-react-app">
-                <AiOutlineGithub />
-              </a>
-            </li>
-            <li>
-              <a href="https://discord.gg/8TzGxmGB7s">
-                <FaDiscord />
-              </a>
-            </li>
-          </IconContext.Provider>
-        </ul>
+        <SocialMedia />
       </div>
 
       <div id="navigation">

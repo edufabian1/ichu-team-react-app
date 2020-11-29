@@ -44,24 +44,6 @@ header #toggle {
   cursor: pointer;
 }
 
-header #toggle:before {
-  content: "";
-  position: absolute;
-  top: 7px;
-  width: 100%;
-  height: 2px;
-  background: #1b9945;
-}
-
-header #toggle:after {
-  content: "";
-  position: absolute;
-  bottom: 7px;
-  width: 100%;
-  height: 2px;
-  background: #1b9945;
-}
-
 .banner {
   position: relative;
   width: 100%;
@@ -74,18 +56,6 @@ header #toggle:after {
   display: flex;
   align-items: center;
   transition: 0.5s;
-}
-
-.banner.active header #toggle:before {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.banner.active header #toggle:after {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .banner.active {
@@ -167,31 +137,6 @@ header #toggle:after {
   background: white;
 }
 
-.sci {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  right: 100px;
-}
-
-.sci li {
-  list-style: none;
-}
-
-.sci li a {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: 75px;
-  height: 75px;
-  text-decoration: none;
-  margin: 5px;
-}
-
-.sci li a:hover {
-  background: white;
-  
-}
 
 @media (max-width: 850px) {
   header {
@@ -211,16 +156,6 @@ header #toggle:after {
   }
   #navigation {
     width: 250px;
-  }
-  .sci {
-    position: absolute;
-    bottom: 50px;
-    right: initial;
-    flex-direction: row;
-  }
-  .sci li a {
-    margin: initial;
-    margin-right: 10px;
   }
 
   header .logo img {

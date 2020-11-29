@@ -1,0 +1,38 @@
+.sci {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 100px;
+}
+
+.sci li {
+  list-style: none;
+}
+
+.sci li a {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 75px;
+  height: 75px;
+  text-decoration: none;
+  margin: 5px;
+  transition: 0.5s;
+}
+
+.sci li a:hover {
+  background: white;
+}
+
+@media (max-width: 850px) {
+  .sci {
+    position: absolute;
+    bottom: 50px;
+    right: initial;
+    flex-direction: row;
+  }
+  .sci li a {
+    margin: initial;
+    margin-right: 10px;
+  }
+}

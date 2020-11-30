@@ -37,11 +37,12 @@
 }
 
 @media (max-width: 850px) {
-  .banner.content h2 {
+  .banner .content h2 {
     font-size: 1.8em;
   }
+
   .banner p,
-  .banner.content a {
+  .banner .content a {
     font-size: 1em;
   }
 }

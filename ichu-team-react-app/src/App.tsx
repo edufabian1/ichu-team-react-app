@@ -1,47 +1,47 @@
 import React from "react";
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 
 import "./App.css";
+import Contact from "./components/Contact/Contact";
 import Home from "./components/Home/Home";
+import { Navbar } from "./components/Navbar/Navbar";
 import SocialMedia from "./components/SocialMedia/SocialMedia";
 
-function toggle() {
-  var sec = document.getElementById("sec");
-  sec?.classList.toggle("active");
-  var nav = document.getElementById("navigation");
-  nav?.classList.toggle("active");
-}
 function App() {
   return (
-    <div className="App">
-      <div className="banner" id="sec">
-        <header>
-          <a href="/" className="logo">
-            <img
-              src="https://cdn.discordapp.com/attachments/689497832029421690/781295380448542741/imageonline-co-blackandwhiteimage.png"
-              alt="LOGO"
-            />
-          </a>
-          <div id="toggle" onClick={toggle}><GiHamburgerMenu size="3em" color="#1b9945"/></div>
-        </header>
-        <Home />
-        <SocialMedia />
-      </div>
+    <Router>
+      <div className="App">
+        <div className="banner" id="sec">
+          <Navbar />
 
-      <div id="navigation">
-        <ul>
-          <li>
-            <a href="/">Inicio</a>
-          </li>
-          <li>
-            <a href="/">Nosotros</a>
-          </li>
-          <li>
-            <a href="/">Contacto</a>
-          </li>
-        </ul>
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/nosotros"></Route>
+            <Route path="/contacto">
+              <Contact />
+            </Route>
+          </Switch>
+
+          <SocialMedia />
+        </div>
+
+        <div id="navigation">
+          <ul>
+            <li>
+              <Link to="/" onClick={() => console.log("disable toggle")}>Inicio</Link>
+            </li>
+            <li>
+              <Link to="/Nosotros" onClick={() => console.log("disable toggle")}>Nosotros</Link>
+            </li>
+            <li>
+              <Link to="/Contacto" onClick={() => console.log("disable toggle")}>Contacto</Link>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
